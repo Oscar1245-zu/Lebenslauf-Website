@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persönliche Daten</title>
+    <link rel="stylesheet" href="persönlichedaten.css">
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="de">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Persönlicher Text – Passwortgeschützt</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Geheimer Bereich</h1>
+            <p>Gebe das Passwort ein, um die Daten zu sehen.</p>
+
+            <div id="secret" class="secret">
+                Name: Oscar Muster<br> E-Mail: oscar@example.com<br> Telefonnummer: 0123-456789<br> Adresse: Musterstraße 1, 12345 Musterstadt
+            </div>
+
+            <div class="controls">
+                <input type="password" id="pw" placeholder="Passwort">
+                <button id="check">Entsperren</button>
+            </div>
+        </div>
+
+        <script>
+            const secret = document.getElementById('secret');
+            const pwInput = document.getElementById('pw');
+            const checkBtn = document.getElementById('check');
+
+            const password = 'starwars'; // hier eigenes Passwort setzen
+
+            checkBtn.addEventListener('click', () => {
+                if (pwInput.value === password) {
+                    secret.classList.add('revealed');
+                    alert('Erfolgreich! Text wird angezeigt.');
+                } else {
+                    alert('Falsches Passwort.');
+                }
+                pwInput.value = '';
+            });
+        </script>
+        <a class="startseite" href="main.html">Zurück zur Startseite</a>
+    </body>
+
+    </html>
+
+</body>
+
+</html>
